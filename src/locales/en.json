@@ -108,7 +108,16 @@
     "technicalInformation": "Technical Information",
     "growthStage": "Growth stage",
     "idealHumidity": "Ideal humidity",
-    "notSpecified": "Not specified"
+    "notSpecified": "Not specified",
+    "edit": "Edit crop",
+    "editDescription": "Update the information for this crop.",
+    "saveChanges": "Save changes",
+    "updateError": "Unable to update crop. Please try again.",
+    "idealHumidityMin": "Minimum ideal humidity (%)",
+    "idealHumidityMax": "Maximum ideal humidity (%)",
+    "invalidHumidity": "Humidity must be between 0 and 100.",
+    "invalidHumidityRange": "Minimum humidity cannot exceed maximum humidity."
+
   },
   "language": "Language"
 }

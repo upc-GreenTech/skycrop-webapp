@@ -108,7 +108,16 @@
     "technicalInformation": "Información técnica",
     "growthStage": "Etapa de crecimiento",
     "idealHumidity": "Humedad ideal",
-    "notSpecified": "No especificado"
+    "notSpecified": "No especificado",
+    "edit": "Editar cultivo",
+    "editDescription": "Actualiza la información de este cultivo.",
+    "saveChanges": "Guardar cambios",
+    "updateError": "No se pudo actualizar el cultivo. Inténtalo de nuevo.",
+    "idealHumidityMin": "Humedad ideal mínima (%)",
+    "idealHumidityMax": "Humedad ideal máxima (%)",
+    "invalidHumidity": "La humedad debe estar entre 0 y 100.",
+    "invalidHumidityRange": "La humedad mínima no puede superar la máxima."
+
   },
   "language": "Idioma"
 }

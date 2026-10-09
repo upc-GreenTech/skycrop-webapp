@@ -23,6 +23,7 @@ const plot = computed(() =>
 
 const crop = computed(() =>
     selectedCrop.value &&
+    String(selectedCrop.value.id) === String(route.params.cropId) &&
     String(selectedCrop.value.plotId) === String(route.params.id)
         ? selectedCrop.value
         : null
@@ -44,20 +45,26 @@ const idealHumidity = computed(() => {
   const min = crop.value.idealHumidityMin;
   const max = crop.value.idealHumidityMax;
 
-  if (min === null && max === null) {
+  if (min == null && max == null) {
     return t('crops.notSpecified');
   }
 
-  if (min !== null && max !== null) {
+  if (min != null && max != null) {
     return `${n(min)}% - ${n(max)}%`;
   }
 
-  if (min !== null) {
-    return `${n(min)}%`;
-  }
-
-  return `${n(max)}%`;
+  return `${n(min ?? max)}%`;
 });
+
+const editCrop = () => {
+  router.push({
+    name: 'crop-edit',
+    params: {
+      id: route.params.id,
+      cropId: route.params.cropId
+    }
+  });
+};
 
 const back = () => {
   router.push(`/plots/${route.params.id}/crops`);
@@ -90,7 +97,7 @@ onMounted(() => {
       {{ t('crops.loading') }}
     </p>
 
-    <p v-else-if="error" role="alert" class="error-message">
+    <p v-else-if="error" class="error-message" role="alert">
       {{ t('crops.loadError') }}
     </p>
 
@@ -119,7 +126,7 @@ onMounted(() => {
           <dd>{{ statusLabel }}</dd>
 
           <dt>{{ t('crops.plantedArea') }}</dt>
-          <dd>{{ crop.plantedAreaHectares === null
+          <dd>{{ crop.plantedAreaHectares == null
               ? '-'
               : n(crop.plantedAreaHectares) }}</dd>
 
@@ -150,6 +157,12 @@ onMounted(() => {
       </div>
 
       <div class="form-actions">
+        <pv-button
+            :label="t('crops.edit')"
+            icon="pi pi-pencil"
+            @click="editCrop"
+        />
+
         <pv-button
             :label="t('crops.backToList')"
             severity="secondary"

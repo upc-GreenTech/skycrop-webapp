@@ -8,7 +8,7 @@ const routes = [
   {path: '/home', name: 'home', component: pendingSection, props: {titleKey: 'navigation.home'}},
   {path: '/profiles', name: 'profile', component: pendingSection, props: {titleKey: 'navigation.profile'}},
   {path: '/drones', name: 'drones', component: pendingSection, props: {titleKey: 'navigation.drones'}},
-  {path: '/diagnoses', name: 'diagnoses', component: pendingSection, props: {titleKey: 'navigation.diagnoses'}},
+  {path: '/diagnoses', name: 'diagnoses', component: () => import('./diagnoses/presentation/views/diagnoses-list.vue')},
   {path: '/reports', name: 'reports', component: pendingSection, props: {titleKey: 'navigation.reports'}},
   {path: '/settings', name: 'settings', component: pendingSection, props: {titleKey: 'navigation.settings'}},
   {path: '/plots', name: 'plots', component: () => import('./plots/presentation/views/plot-list.vue')},

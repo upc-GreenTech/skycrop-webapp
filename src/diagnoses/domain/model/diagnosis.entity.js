@@ -6,8 +6,9 @@ export class Diagnosis {
     #generatedAt;
     #observations;
     #status;
+    #anomalies;
 
-    constructor(id, generated, observations, status) {
+    constructor(id, generated, observations, status, anomalies) {
         if (!DateTime.isValidDate(generated)) {
             throw new Error("generatedAt must be a valid date value");
         }
@@ -20,6 +21,12 @@ export class Diagnosis {
         if (!["PENDING","PROCESSING","COMPLETED","FAILED"].includes(status.toUpperCase())){
             throw new Error("Entered status is invalid");
         }
+
+        this.#id = id;
+        this.#generatedAt = generated instanceof DateTime? generated : new DateTime(generated);
+        this.#observations = observations;
+        this.#status = status;
+        this.#anomalies = anomalies;
     }
 
     get id(){
@@ -36,5 +43,9 @@ export class Diagnosis {
 
     get status(){
         return this.#status;
+    }
+
+    get anomalies(){
+        return this.#anomalies;
     }
 }

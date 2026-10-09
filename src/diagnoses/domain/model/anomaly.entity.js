@@ -6,7 +6,6 @@ export class Anomaly {
     #severity;
     #description;
     #location;
-    #diagnosisID
 
     constructor(id, type, severity, description, location){
         if (!StringValidator.isNotEmptyString(type)){
@@ -30,6 +29,11 @@ export class Anomaly {
             throw new Error("Invalid Type");
         }
 
+        this.#id = id;
+        this.#type = type;
+        this.#severity = severity;
+        this.#description = description;
+        this.#location = location;
     }
 
     get id(){
@@ -52,9 +56,6 @@ export class Anomaly {
         return this.#location;
     }
 
-    get diagnosisID(){
-        return this.#diagnosisID
-    }
 
 
 

@@ -1,10 +1,4 @@
 /**
- *    #id;
- *     #type;
- *     #severity;
- *     #description;
- *     #location;
- *
  * @typedef {Object} DiagnosisResource
  * @property {string} id
  * @property {string} generatedAt

@@ -46,5 +46,5 @@ export const useDiagnosesStore = defineStore('diagnoses', () => {
         }
     }
 
-
+    return {diagnoses, loading, saving, error, fetchDiagnoses, registerDiagnosis}
 })

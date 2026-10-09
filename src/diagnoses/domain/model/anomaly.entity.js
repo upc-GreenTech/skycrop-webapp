@@ -25,8 +25,8 @@ export class Anomaly {
             throw new Error("Invalid Type");
         }
 
-        if (!["WATER_STRESS","PEST","FERTILIZER_DEFICIENCITY","OTHER"].includes(type.toUpperCase())){
-            throw new Error("Invalid Type");
+        if (!["LOW","HIGH","MEDIUM","CRITICAL"].includes(severity.toUpperCase())){
+            throw new Error("Invalid Severity");
         }
 
         this.#id = id;

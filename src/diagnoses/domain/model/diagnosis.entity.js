@@ -33,8 +33,8 @@ export class Diagnosis {
         return this.#id;
     }
 
-    get generatedAt(){
-        return this.#generatedAt;
+    get generationDate(){
+        return this.#generatedAt.format();
     }
 
     get observations(){
@@ -47,5 +47,13 @@ export class Diagnosis {
 
     get anomalies(){
         return this.#anomalies;
+    }
+
+    get topAnomaly(){
+        return this.#anomalies[0].type;
+    }
+
+    get topLocation(){
+        return this.#anomalies[0].location;
     }
 }

@@ -1,3 +1,4 @@
+
 import {createApp} from 'vue'
 import './style.css'
 import App from './app.vue'
@@ -12,6 +13,7 @@ import 'primeflex/primeflex.css'
 import 'primeicons/primeicons.css'
 
 import {
+    AutoComplete,
     Button,
     Card,
     Column,
@@ -42,6 +44,7 @@ createApp(App)
         license: primeUiLicenseKey
     })
     .use(router)
+    .component('pv-auto-complete', AutoComplete)
     .component('pv-button', Button)
     .component('pv-card', Card)
     .component('pv-column', Column)

@@ -123,7 +123,22 @@
     "invalidArea": "The planted area must be greater than zero.",
     "exceedsPlotArea": "The planted area cannot exceed the plot area.",
     "invalidHarvestDate": "Expected harvest cannot be before the planting date.",
-    "registerError": "Unable to register crop. Please try again."
+    "registerError": "Unable to register crop. Please try again.",
+    "notFound": "Crop not found.",
+    "backToList": "Back to crops",
+    "technicalInformation": "Technical Information",
+    "growthStage": "Growth stage",
+    "idealHumidity": "Ideal humidity",
+    "notSpecified": "Not specified",
+    "edit": "Edit crop",
+    "editDescription": "Update the information for this crop.",
+    "saveChanges": "Save changes",
+    "updateError": "Unable to update crop. Please try again.",
+    "idealHumidityMin": "Minimum ideal humidity (%)",
+    "idealHumidityMax": "Maximum ideal humidity (%)",
+    "invalidHumidity": "Humidity must be between 0 and 100.",
+    "invalidHumidityRange": "Minimum humidity cannot exceed maximum humidity."
+
   },
   "language": "Language",
   "drones": {

@@ -123,7 +123,22 @@
     "invalidArea": "La superficie sembrada debe ser mayor que cero.",
     "exceedsPlotArea": "La superficie sembrada no puede superar la superficie de la parcela.",
     "invalidHarvestDate": "La cosecha prevista no puede ser anterior a la fecha de siembra.",
-    "registerError": "No se pudo registrar el cultivo. Inténtalo de nuevo."
+    "registerError": "No se pudo registrar el cultivo. Inténtalo de nuevo.",
+    "notFound": "Cultivo no encontrado.",
+    "backToList": "Volver a cultivos",
+    "technicalInformation": "Información técnica",
+    "growthStage": "Etapa de crecimiento",
+    "idealHumidity": "Humedad ideal",
+    "notSpecified": "No especificado",
+    "edit": "Editar cultivo",
+    "editDescription": "Actualiza la información de este cultivo.",
+    "saveChanges": "Guardar cambios",
+    "updateError": "No se pudo actualizar el cultivo. Inténtalo de nuevo.",
+    "idealHumidityMin": "Humedad ideal mínima (%)",
+    "idealHumidityMax": "Humedad ideal máxima (%)",
+    "invalidHumidity": "La humedad debe estar entre 0 y 100.",
+    "invalidHumidityRange": "La humedad mínima no puede superar la máxima."
+
   },
   "language": "Idioma",
   "drones": {

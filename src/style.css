@@ -199,6 +199,37 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1976a8; outline-offs
   }
 }
 
+/* Crop Details */
+.crop-details-card {
+  max-width: 800px;
+  margin-top: 24px;
+}
+
+.crop-details-information {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) 2fr;
+  gap: 16px;
+}
+
+.crop-details-information dt {
+  font-weight: 600;
+}
+
+.crop-details-information dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .crop-details-information {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .crop-details-information dd {
+    margin-bottom: 12px;
+  }
+}
 .plot-registration-grid, .plot-detail-grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);

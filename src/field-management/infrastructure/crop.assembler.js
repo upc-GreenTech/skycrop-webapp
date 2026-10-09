@@ -19,7 +19,10 @@ export class CropAssembler {
             irrigationType: entity.irrigationType,
             soilType: entity.soilType,
             notes: entity.notes,
-            imageUrl: entity.imageUrl
+            imageUrl: entity.imageUrl,
+            growthStage: entity.growthStage,
+            idealHumidityMin: entity.idealHumidityMin,
+            idealHumidityMax: entity.idealHumidityMax
         };
 
         if (entity.id !== null) {

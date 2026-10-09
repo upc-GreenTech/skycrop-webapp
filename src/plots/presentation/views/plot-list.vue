@@ -1,4 +1,3 @@
-
 <script setup>
 import {useI18n} from 'vue-i18n';
 import {computed, onMounted, ref} from 'vue';
@@ -20,8 +19,11 @@ const statusOptions = computed(() => [
 
 const filteredPlots = computed(() => {
   const query = search.value.trim().toLowerCase();
-  return plots.value.filter(plot => `${plot.name} ${plot.location} ${plot.cropType} ${summaries.value[plot.id]?.crops || ""}`.toLowerCase().includes(query)
-      && (!status.value || plot.status === status.value));
+  return plots.value.filter(plot =>
+      `${plot.name} ${plot.location} ${plot.cropType} ${summaries.value[plot.id]?.crops || ''}`
+          .toLowerCase().includes(query) &&
+      (!status.value || plot.status === status.value)
+  );
 });
 
 onMounted(() => store.fetchPlots());
@@ -66,7 +68,9 @@ onMounted(() => store.fetchPlots());
     </div>
 
     <template v-else>
-      <p v-if="summaryError" class="error-message" role="status">{{ t(summaryError) }}</p>
+      <p v-if="summaryError" class="error-message" role="status">
+        {{ t(summaryError) }}
+      </p>
       <p v-if="!plots.length" class="empty-state">
         {{ t('plots.empty') }}
       </p>
@@ -84,13 +88,34 @@ onMounted(() => store.fetchPlots());
           <PlotImage :src="plot.imageUrl" :name="plot.name" />
           <div class="registered-plot-information">
             <h2>{{ plot.name }}</h2>
-            <p>{{ t('plots.cropType') }}: {{ summaries[plot.id]?.crops || plot.cropType || t('plots.notAvailable') }}</p>
+            <p>
+              {{ t('plots.cropType') }}:
+              {{ summaries[plot.id]?.crops || plot.cropType || t('plots.notAvailable') }}
+            </p>
+            <p>{{ t('plots.location') }}: {{ plot.location }}</p>
             <p>{{ t('plots.surface') }}: {{ n(plot.areaHectares) }} ha</p>
             <p>{{ t('plots.soilType') }}: {{ plot.soilType || t('plots.notAvailable') }}</p>
-            <p>{{ t('plots.activeAlerts') }}: {{ summaries[plot.id]?.activeAlerts ?? t('plots.notAvailable') }}</p>
+            <p>
+              {{ t('plots.activeAlerts') }}:
+              {{ summaries[plot.id]?.activeAlerts ?? t('plots.notAvailable') }}
+            </p>
+            <p>
+              {{ t('plots.status') }}:
+              {{ t(plot.status === 'ACTIVE' ? 'plots.active' : 'plots.inactive') }}
+            </p>
             <div class="plot-card-actions">
-              <router-link :to="`/plots/${plot.id}`" :aria-label="t('plots.detailsLink', {name: plot.name})">{{ t('plots.details') }}</router-link>
-              <router-link :to="`/plots/${plot.id}/crops`" :aria-label="t('crops.viewPlotCrops', {name: plot.name})">{{ t('plots.cropsLink') }}</router-link>
+              <router-link
+                  :to="`/plots/${plot.id}`"
+                  :aria-label="t('plots.detailsLink', {name: plot.name})"
+              >
+                {{ t('plots.details') }}
+              </router-link>
+              <router-link
+                  :to="`/plots/${plot.id}/crops`"
+                  :aria-label="t('crops.viewPlotCrops', {name: plot.name})"
+              >
+                {{ t('plots.cropsLink') }}
+              </router-link>
             </div>
           </div>
         </article>

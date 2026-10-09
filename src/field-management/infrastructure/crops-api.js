@@ -19,4 +19,8 @@ export class CropsApi {
     create(resource) {
         return this.#http.post('/crops', resource);
     }
+
+    update(id, resource) {
+        return this.#http.put(`/crops/${encodeURIComponent(id)}`, resource);
+    }
 }

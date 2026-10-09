@@ -15,11 +15,15 @@ const routes = [
   {path: '/reports', name: 'reports', component: () => import('./reports/presentation/views/report-list.vue')},
   {path: '/reports/:id', name: 'report-details', component: () => import('./reports/presentation/views/report-details.vue')},
   {path: '/settings', name: 'settings', component: pendingSection, props: {titleKey: 'navigation.settings'}},
+
   {path: '/plots', name: 'plots', component: () => import('./plots/presentation/views/plot-list.vue')},
   {path: '/plots/new', name: 'plot-registration', component: () => import('./plots/presentation/views/plot-registration.vue')},
   {path: '/plots/:id', name: 'plot-details', component: () => import('./plots/presentation/views/plot-details.vue')},
+
   {path: '/plots/:id/crops/new', name: 'crop-registration', component: () => import('./field-management/presentation/components/crop-form.vue')},
-  {path: '/plots/:id/crops', name: 'crop-list', component: () => import('./field-management/presentation/views/crop-list.vue')}
+  {path: '/plots/:id/crops', name: 'crop-list', component: () => import('./field-management/presentation/views/crop-list.vue')},
+  {path: '/plots/:id/crops/:cropId/edit', name: 'crop-edit', component: () => import('./field-management/presentation/components/crop-form.vue')},
+  {path: '/plots/:id/crops/:cropId', name: 'crop-details', component: () => import('./field-management/presentation/views/crop-details.vue')}
 ];
 
 export default createRouter({

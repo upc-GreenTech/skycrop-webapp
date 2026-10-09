@@ -13,6 +13,9 @@ export class Crop {
     #soilType;
     #notes;
     #imageUrl;
+    #growthStage;
+    #idealHumidityMin;
+    #idealHumidityMax;
 
     constructor({
                     id = null,
@@ -27,7 +30,10 @@ export class Crop {
                     irrigationType = '',
                     soilType = '',
                     notes = '',
-                    imageUrl = ''
+                    imageUrl = '',
+                    growthStage = '',
+                    idealHumidityMin = null,
+                    idealHumidityMax = null
                 }) {
         if (plotId === null || plotId === undefined || plotId === '') {
             throw new Error('A plot is required.');
@@ -51,6 +57,26 @@ export class Crop {
             throw new Error('The planted area must be greater than zero.');
         }
 
+        if (typeof growthStage !== 'string') {
+            throw new Error('The growth stage must be text.');
+        }
+
+        for (const value of [idealHumidityMin, idealHumidityMax]) {
+            if (value !== null &&
+                (typeof value !== 'number' ||
+                    !Number.isFinite(value) ||
+                    value < 0 ||
+                    value > 100)) {
+                throw new Error('The ideal humidity must be between 0 and 100.');
+            }
+        }
+
+        if (idealHumidityMin !== null &&
+            idealHumidityMax !== null &&
+            idealHumidityMin > idealHumidityMax) {
+            throw new Error('The minimum humidity cannot exceed the maximum.');
+        }
+
         this.#id = id;
         this.#plotId = plotId;
         this.#name = name.trim();
@@ -64,6 +90,9 @@ export class Crop {
         this.#soilType = soilType;
         this.#notes = notes;
         this.#imageUrl = imageUrl;
+        this.#growthStage = growthStage.trim();
+        this.#idealHumidityMin = idealHumidityMin;
+        this.#idealHumidityMax = idealHumidityMax;
     }
 
     get id() { return this.#id; }
@@ -79,4 +108,7 @@ export class Crop {
     get soilType() { return this.#soilType; }
     get notes() { return this.#notes; }
     get imageUrl() { return this.#imageUrl; }
+    get growthStage() { return this.#growthStage; }
+    get idealHumidityMin() { return this.#idealHumidityMin; }
+    get idealHumidityMax() { return this.#idealHumidityMax; }
 }

@@ -11,7 +11,14 @@ export class AgriculturalPlotAssembler {
       areaHectares: entity.areaHectares,
       location: entity.location,
       createdAt: entity.createdAt,
-      status: entity.status
+      status: entity.status,
+      personInCharge: entity.personInCharge,
+      cropType: entity.cropType,
+      soilType: entity.soilType,
+      sowingDate: entity.sowingDate,
+      latitude: entity.latitude,
+      longitude: entity.longitude,
+      imageUrl: entity.imageUrl
     };
     if (entity.id !== null) resource.id = entity.id;
     return resource;

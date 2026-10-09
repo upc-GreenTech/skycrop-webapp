@@ -198,3 +198,46 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1976a8; outline-offs
     flex-direction: column-reverse;
   }
 }
+
+.plot-registration-grid, .plot-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 24px;
+  margin: 32px 0 24px;
+}
+.plot-registration-grid .plot-card { align-self: start; }
+.plot-registration-grid .form-field { margin-bottom: 12px; }
+.plot-location-section > small { display: block; margin: 12px 0; }
+.plot-location-map { height: 280px; width: 100%; border-radius: 6px; z-index: 0; }
+.map-notice { padding: 8px; background: white; color: #b3261e; font-size: 14px; }
+.location-search-row { display: flex; gap: 8px; }
+.location-search-row .p-inputtext { min-width: 0; flex: 1; }
+.location-results { list-style: none; padding: 0; margin: 0; background: white; }
+.location-results button { text-align: left; width: 100%; padding: 12px; color: #163348; border: 0; border-bottom: 1px solid #d0d9d4; background: white; cursor: pointer; }
+.coordinate-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.plot-image-field { max-width: 640px; }
+.registered-plot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; padding: 12px; }
+.registered-plot-information { padding: 4px 0; }
+.registered-plot-information h2 { font-size: 17px; margin-bottom: 12px; }
+.registered-plot-information p { font-size: 14px; margin: 6px 0; }
+.plot-image { min-height: 190px; border-radius: 6px; overflow: hidden; background: #abd7ec; }
+.plot-image img { display: block; width: 100%; height: 100%; min-height: 190px; object-fit: cover; }
+.plot-image-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 190px; height: 100%; color: #163348; }
+.plot-image-empty i { font-size: 32px; }
+.plot-card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.registered-plot .plot-card-actions a { padding: 6px 12px; font-size: 14px; }
+.plot-detail-grid .plot-image { margin-bottom: 24px; height: 220px; }
+.plot-detail-grid .plot-details { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.back-link { display: inline-block; margin-bottom: 16px; }
+
+@media (max-width: 1100px) {
+  .plot-list-page .plot-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 800px) {
+  .plot-registration-grid, .plot-detail-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .registered-plot { grid-template-columns: 1fr; }
+  .coordinate-fields { grid-template-columns: 1fr; }
+  .plot-card-actions a { flex: 1; text-align: center; }
+}

@@ -1,4 +1,3 @@
-
 {
   "plots": {
     "listTitle": "Parcelas agrícolas registradas",
@@ -37,7 +36,29 @@
     "detailError": "No se pudieron cargar los detalles. Inténtalo de nuevo.",
     "registerError": "No se pudo registrar la parcela. Revisa los datos e inténtalo de nuevo.",
     "allStatuses": "Todos los estados",
-    "filterStatus": "Filtrar por estado"
+    "filterStatus": "Filtrar por estado",
+    "personInCharge": "Responsable",
+    "cropType": "Tipo de cultivo",
+    "soilType": "Tipo de suelo",
+    "sowingDate": "Fecha de siembra",
+    "imageUrl": "URL de imagen de la parcela (opcional)",
+    "activeAlerts": "Alertas activas",
+    "map": "Ubicación de la parcela",
+    "mapHelp": "Busca una ubicación o selecciona un punto en el mapa.",
+    "mapUnavailable": "No se pudo cargar el mapa. Puedes ingresar las coordenadas.",
+    "locationSearch": "Buscar ubicación",
+    "searchLocation": "Buscar",
+    "searchingLocation": "Buscando…",
+    "locationError": "No se pudo buscar la ubicación. Ingresa su descripción y coordenadas.",
+    "noLocations": "No se encontraron ubicaciones.",
+    "latitude": "Latitud",
+    "longitude": "Longitud",
+    "invalidCoordinates": "Ingresa ambas coordenadas dentro de sus rangos válidos.",
+    "mapNotSelected": "Esta parcela no tiene coordenadas registradas.",
+    "summaryError": "No se pudo cargar la información de cultivos y alertas.",
+    "noImage": "Sin imagen de parcela",
+    "cropsLink": "Ver cultivos",
+    "mapSearchHelp": "La búsqueda se realiza al presionar Buscar."
   },
   "navigation": {
     "home": "Inicio",

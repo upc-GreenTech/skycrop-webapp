@@ -301,3 +301,22 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1976a8; outline-offs
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
 @media (max-width: 1000px) { .report-overview { grid-template-columns: 1fr; } .report-metrics { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .report-detail-toolbar { flex-direction: column; align-items: stretch; } .report-form-grid, .report-metrics { grid-template-columns: 1fr; } .report-table th, .report-table td { padding: 10px; } }
+
+.diagnosis-table-wrap { overflow-x: auto; margin-top: 24px; }
+.diagnosis-table { width: 100%; min-width: 780px; border-collapse: separate; border-spacing: 0 8px; text-align: left; }
+.diagnosis-table th, .diagnosis-table td { padding: 16px; background: #abd7ec; color: #163348; }
+.diagnosis-table thead th { background: var(--plot-blue); color: white; }
+.diagnosis-table .action-link { display: inline-block; padding: 8px 16px; }
+.diagnosis-source { display: block; margin-top: 6px; font-weight: 600; }
+.diagnosis-generation { margin-top: 24px; }
+.diagnosis-form-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.diagnosis-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+.diagnosis-simulation-notice { border-left: 4px solid var(--plot-blue); background: #e1f0f6; padding: 16px; }
+.diagnosis-anomaly { padding: 16px; margin-top: 16px; background: #ffffff20; }
+.diagnosis-legend { display: flex; flex-wrap: wrap; gap: 16px; padding: 0; list-style: none; }
+.diagnosis-legend li { display: inline-flex; align-items: center; gap: 8px; }
+.diagnosis-legend span { width: 14px; height: 14px; border-radius: 50%; border: 1px solid white; }
+@media (max-width: 900px) { .diagnosis-detail-grid, .diagnosis-form-grid { grid-template-columns: 1fr; } }
+
+.diagnosis-pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px; padding: 16px 0; }
+.diagnoses-page .diagnosis-pagination .p-select { width: 90px; }

@@ -5,6 +5,10 @@
  * @property {string} observations
  * @property {string} status
  * @property {Anomaly[]} anomalies
+ * @property {string|number|null} plotId
+ * @property {string|number|null} flightId
+ * @property {string} source
+ * @property {number|null} averageNdvi
  */
 
 /**
@@ -14,6 +18,8 @@
  * @property {string} severity
  * @property {string} description
  * @property {string} location
+ * @property {number|null} latitude
+ * @property {number|null} longitude
  */
 
 /**
@@ -21,8 +27,4 @@
  * @property {DiagnosisResource[]} diagnoses
  */
 
-
-
-
-
-export {}
+export {};

@@ -11,6 +11,7 @@ const routes = [
   {path: '/drones/new', name: 'drone-registration', component: () => import('./drones/presentation/views/drone-registration.vue')},
   {path: '/drones/:id', name: 'drone-details', component: () => import('./drones/presentation/views/drone-details.vue')},
   {path: '/diagnoses', name: 'diagnoses', component: () => import('./diagnoses/presentation/views/diagnoses-list.vue')},
+  {path: '/diagnoses/:id', name: 'diagnosis-details', component: () => import('./diagnoses/presentation/views/diagnosis-details.vue')},
   {path: '/reports', name: 'reports', component: () => import('./reports/presentation/views/report-list.vue')},
   {path: '/reports/:id', name: 'report-details', component: () => import('./reports/presentation/views/report-details.vue')},
   {path: '/settings', name: 'settings', component: pendingSection, props: {titleKey: 'navigation.settings'}},

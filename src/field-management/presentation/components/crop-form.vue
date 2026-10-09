@@ -16,6 +16,7 @@ const {plots, loading: plotsLoading, error: plotsError} = storeToRefs(plotsStore
 
 const cropsStore = useCropsStore();
 const {
+  crops,
   selectedCrop,
   loading: cropLoading,
   saving,
@@ -27,6 +28,8 @@ const isEditing = computed(() => route.name === 'crop-edit');
 
 const name = ref('');
 const variety = ref('');
+const suggestedVarieties = ref([]);
+
 const plantingDate = ref(null);
 const expectedHarvest = ref(null);
 const plantedAreaHectares = ref(null);
@@ -41,6 +44,21 @@ const idealHumidityMin = ref(null);
 const idealHumidityMax = ref(null);
 
 const validationMessage = ref('');
+
+const searchVarieties = event => {
+  const query = (event.query ?? '').trim().toLocaleLowerCase();
+
+  const varieties = crops.value
+      .map(crop => crop.variety)
+      .filter(value => typeof value === 'string' && value.trim())
+      .map(value => value.trim());
+
+  const uniqueVarieties = [...new Set(varieties)];
+
+  suggestedVarieties.value = uniqueVarieties.filter(value =>
+      value.toLocaleLowerCase().includes(query)
+  );
+};
 
 const plot = computed(() =>
     plots.value.find(item => String(item.id) === String(route.params.id))
@@ -86,6 +104,7 @@ const optionalNumber = value => {
 const resetForm = () => {
   name.value = '';
   variety.value = '';
+  suggestedVarieties.value = [];
   plantingDate.value = null;
   expectedHarvest.value = null;
   plantedAreaHectares.value = null;
@@ -219,6 +238,7 @@ const saveCrop = async () => {
 
 onMounted(() => {
   plotsStore.fetchPlots();
+  cropsStore.fetchCrops();
 });
 
 watch(
@@ -309,10 +329,14 @@ watch(
 
           <div class="crop-registration-field">
             <label for="crop-variety">{{ t('crops.variety') }} *</label>
-            <pv-input-text
-                id="crop-variety"
+            <pv-auto-complete
+                input-id="crop-variety"
                 v-model="variety"
+                :suggestions="suggestedVarieties"
                 :placeholder="t('crops.varietyPlaceholder')"
+                dropdown
+                fluid
+                @complete="searchVarieties"
             />
           </div>
 

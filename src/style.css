@@ -241,3 +241,42 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1976a8; outline-offs
   .coordinate-fields { grid-template-columns: 1fr; }
   .plot-card-actions a { flex: 1; text-align: center; }
 }
+
+.drone-list { display: grid; gap: 20px; margin-top: 24px; }
+.drone-card { display: grid; grid-template-columns: 160px minmax(0, 1fr) auto; align-items: center; gap: 20px; padding: 16px; }
+.drone-card h2 { margin-bottom: 8px; }
+.drone-facts { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.drone-facts p { margin: 4px 0; font-size: 14px; }
+.drone-image { background: #abd7ec; min-height: 150px; border-radius: 6px; overflow: hidden; }
+.drone-image img { width: 100%; height: 100%; min-height: 150px; max-height: 300px; object-fit: cover; display: block; }
+.drone-image span { display: flex; flex-direction: column; min-height: 150px; height: 100%; align-items: center; justify-content: center; gap: 12px; color: #163348; }
+.drone-image i { font-size: 32px; }
+.drone-registration { max-width: 760px; }
+.drone-tabs { display: flex; margin: 24px 0 32px; border-bottom: 1px solid var(--plot-blue); }
+.drone-tabs button { flex: 1; padding: 12px; border: 0; background: #abd7ec; color: #163348; cursor: pointer; }
+.drone-tabs button[aria-current] { background: var(--plot-blue); color: white; }
+.drone-summary { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 24px; }
+.drone-activity { display: flex; gap: 16px; align-items: center; background: #ffffff20; padding: 12px; margin-top: 16px; }
+.drone-activity > div { flex: 1; }
+.drone-activity p { margin: 4px 0; }
+.drone-route-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; margin: 24px 0; }
+.drone-route-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 16px; }
+.drone-route-row h3 { margin: 0; }
+.drone-statistics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.drone-statistics p { font-size: 32px; }
+.drone-flight-details { margin-top: 24px; }
+.waypoint-list { max-height: 200px; overflow: auto; padding-left: 24px; }
+.waypoint-list li { margin: 8px 0; }
+.waypoint-list button { margin-left: 8px; cursor: pointer; }
+@media (max-width: 900px) {
+  .drone-card { grid-template-columns: 120px minmax(0, 1fr); }
+  .drone-card > .action-link { grid-column: 2; text-align: center; }
+  .drone-route-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .drone-card, .drone-summary, .drone-statistics { grid-template-columns: 1fr; }
+  .drone-card > .action-link { grid-column: 1; }
+  .drone-tabs { flex-wrap: wrap; }
+  .drone-tabs button { flex: 1 1 30%; }
+  .drone-activity, .drone-route-row { flex-direction: column; align-items: stretch; }
+}

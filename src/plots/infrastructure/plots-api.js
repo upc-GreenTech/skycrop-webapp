@@ -15,6 +15,12 @@ export class PlotsApi {
     return this.#http.get(`/plots/${encodeURIComponent(id)}`);
   }
 
+  getCrops() { return this.#http.get('/crops'); }
+
+  getNotifications() { return this.#http.get('/notifications'); }
+
+  getDiagnoses() { return this.#http.get('/diagnoses'); }
+
   create(resource) {
     return this.#http.post('/plots', resource);
   }

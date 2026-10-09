@@ -29,4 +29,14 @@ English is the default language. Use the EN/ES selector in the header to switch 
 
 The API is a mock service hosted on Azure. Maps and telemetry remain separate features. Collections may be empty after rebuilding the mock. Authentication, payment processing and image analysis are not provided by generic CRUD.
 
-Run `npm run build` to compile the application. Configure `VITE_SKYCROP_API_URL` for the target API when building for another environment.
+## Environment configuration
+
+Configure the service URLs in `.env` before starting the application or creating a production build:
+
+| Variable | Service |
+| --- | --- |
+| `VITE_SKYCROP_API_URL` | SkyCrop mock API |
+| `VITE_GEOCODING_URL` | Location search |
+| `VITE_MAP_TILE_URL` | Map tiles, using the `{z}`, `{x}` and `{y}` placeholders |
+
+Run `npm run build` to compile the application. Restart the development server or rebuild the application after changing these values.

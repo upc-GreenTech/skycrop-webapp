@@ -28,7 +28,7 @@ function updateMarker() {
 
 onMounted(() => {
   map = L.map(container.value, {scrollWheelZoom: false}).setView([-9.19, -75.02], 5);
-  const tiles = L.tileLayer(import.meta.env.VITE_MAP_TILE_URL || 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  const tiles = L.tileLayer(import.meta.env.VITE_MAP_TILE_URL, {
     maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
   tiles.on('tileerror', () => { tileError.value = true; });
